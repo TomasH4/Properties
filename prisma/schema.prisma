@@ -1,0 +1,23 @@
+// Configuración del generador de Prisma Client
+// Esto genera el código que usamos para interactuar con la DB
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Conexión a PostgreSQL
+// En Prisma 7, la URL se configura en prisma.config.ts
+datasource db {
+  provider = "postgresql"
+}
+
+// Modelo Property: representa una propiedad inmobiliaria
+model Property {
+  id        Int      @id @default(autoincrement()) // ID único autoincremental
+  title     String                                  // Título de la propiedad
+  price     Float                                   // Precio de la propiedad
+  location  String                                  // Ubicación de la propiedad
+  available Boolean  @default(true)                 // ¿Está disponible? (por defecto sí)
+  createdAt DateTime @default(now())                // Fecha de creación automática
+
+  @@map("properties") // Nombre de la tabla en la base de datos
+}
