@@ -21,3 +21,14 @@ model Property {
 
   @@map("properties") // Nombre de la tabla en la base de datos
 }
+
+//Modelo User 
+model User {
+  id        Int      @id @default(autoincrement()) // ID único autoincremental
+  name      String                                  // Nombre del usuario
+  email     String   @unique                     // Email del usuario
+  password  String                                  // Contraseña del usuario
+  createdAt DateTime @default(now())               // Fecha de creación automática
+
+  @@map("users") // Nombre de la tabla en la base de datos
+}
