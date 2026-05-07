@@ -28,7 +28,12 @@ export const validate = (schemas: ValidationSchemas) => {
         allErrors.push(...formatted);
       } else {
         // Reemplazar el valor del request con el dato ya validado/coercionado
-        (req as any)[key] = result.data;
+        Object.defineProperty(req, key, {
+          value: result.data,
+          writable: true,
+          enumerable: true,
+          configurable: true,
+        });
       }
     }
 
