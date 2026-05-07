@@ -4,10 +4,8 @@ generator client {
   provider = "prisma-client-js"
 }
 
-// Conexión a PostgreSQL
-// En Prisma 7, la URL se configura en prisma.config.ts
 datasource db {
-  provider = "postgresql"
+  provider  = "postgresql"
 }
 
 // Modelo Property: representa una propiedad inmobiliaria
