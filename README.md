@@ -33,7 +33,7 @@ Para poner a correr este proyecto en tu máquina local, seguí estos pasos. Quis
 2. **Configurar las variables de entorno:**
    En la raíz del proyecto, vas a encontrar un archivo `.env.example`. Copialo y renombralo a `.env`. Ahí debes configurar la cadena de conexión a la base de datos PostgreSQL y el secreto para los tokens JWT:
    ```env
-   "postgresql://postgres.fwtruagrigkfuheabdoh:[YOUR-PASSWORD]@aws-1-us-east-2.pooler.supabase.com:6543/postgres?pgbouncer=true"
+   DATABASE_URL="postgresql://postgres.fwtruagrigkfuheabdoh:[YOUR-PASSWORD]@aws-1-us-east-2.pooler.supabase.com:6543/postgres?pgbouncer=true"
    JWT_SECRET="tu_super_secreto_aqui"
    ```
 
